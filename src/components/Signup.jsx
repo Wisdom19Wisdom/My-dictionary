@@ -54,10 +54,10 @@ const Signup = () => {
             setLoading(true);
             if (existingEmails.includes(values.email)) {
                 setLoading(false);
-                toast('User already exists');
+                toast.error('User already exists');
             }else if (existingPhoneNumbers.includes(values.number)) {
                 setLoading(false);
-                toast('User already exists');
+                toast.error('User already exists');
             }else {
                 console.log(values);
                 const newData = [...storedUserData, values];

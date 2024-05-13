@@ -18,7 +18,7 @@ const home = () => {
   const [response, setResponse] = useState(false);
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
-  const userDatas = JSON.parse(localStorage.getItem('userData'));
+  const userDatas = JSON.parse(localStorage.getItem('userData')) || [];
   const findUser = userDatas.find((user) => user.email === emailId)
   const [clickCount, setClickCount] = useState(0);
   

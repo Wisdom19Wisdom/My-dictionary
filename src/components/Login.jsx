@@ -1,6 +1,5 @@
 import { useFormik } from 'formik'
 import React, { useState } from 'react'
-import { FaHouse } from 'react-icons/fa6';
 import { Link, useNavigate } from 'react-router-dom'
 import { ToastContainer, toast } from 'react-toastify';
 
@@ -22,10 +21,10 @@ const Login = () => {
 
         if (!user) {
             setLoading(false);
-             toast ('User not found');
+             toast.error('User not found');
          } else if (user.password !== values.password) {
              setLoading(false);
-             toast ('Incorrect password');
+             toast.error('Incorrect password');
          } else {
              // Add logic for setting user as authenticated (e.g., setting a token)
              navigate(`/home/${formik.values.email}`);
